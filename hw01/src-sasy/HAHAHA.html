@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HAHAHA Dummy CSV</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  .container {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+  #csv-display {
+    white-space: pre-wrap;
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.85em;
+    line-height: 1.5;
+    margin-top: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>KunJi'ㄉ Dummy CSV</h1>
+  <button id="generate-csv-button">生成虛擬成績表</button>
+  <button id="download-csv-button" style="display:none;">下載 CSV</button>
+  <div id="csv-display"></div>
+</div>
+
+<script>
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getRandomDepartment() {
+  const departments = ['資工系', '資工所', '電資AI', '電資資安', '創新AI'];
+  return departments[Math.floor(Math.random() * departments.length)];
+}
+
+function getRandomStudentId() {
+  const prefixes = [111, 112];
+  const middle = [590, 598, 'C52', 'C53', 'C71'];
+  return `${prefixes[getRandomInt(0, 1)]}${middle[getRandomInt(0, middle.length - 1)]}${getRandomInt(1, 999).toString().padStart(3, '0')}`;
+}
+
+function getRandomGithubUsername() {
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let username = '';
+  for (let i = 0; i < 10; i++) {
+    username += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return username;
+}
+
+function generateScores() {
+  return Array.from({ length: 10 }, () => getRandomInt(0, 10)).join(',');
+}
+
+function generateCSVData(numStudents) {
+  let data = '學號,班級,GitHub帳號,' + Array.from({ length: 10 }, (_, i) => `作業${i + 1}`).join(',') + '\n';
+  for (let i = 0; i < numStudents; i++) {
+    data += `${getRandomStudentId()},${getRandomDepartment()},${getRandomGithubUsername()},${generateScores()}\n`;
+  }
+  return data;
+}
+
+function displayCSV() {
+  const csvData = generateCSVData(120);
+  document.getElementById('csv-display').textContent = csvData;
+  document.getElementById('download-csv-button').style.display = 'block';
+}
+
+function downloadCSV() {
+  const csvData = document.getElementById('csv-display').textContent;
+  const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = 'DummyCSV.csv';
+  link.style.visibility = 'hidden';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+document.getElementById('generate-csv-button').addEventListener('click', displayCSV);
+document.getElementById('download-csv-button').addEventListener('click', downloadCSV);
+</script>
+</body>
+</html>
