@@ -168,8 +168,8 @@
         .append("td")
         .html((d, i) => {
             if (i == 4 && d != 'GitHub 帳號') {
-                const imageSource = '../HAHAHA.png';
-                return '<img src="' + imageSource + '">' + '<hr><a href="https://github.com/' + d + '/vis2023f/" target="_blank">' + d + '</a>';
+                const photo = '../HAHAHA.png';
+                return '<img src="' + photo + '">' + '<hr><a href="https://github.com/' + d + '/vis2023f/" target="_blank">' + d + '</a>';
             } else if (i == 0 || i == 2 || isNaN(d)) {
                 return d;
             }
