@@ -167,7 +167,7 @@
         .enter()
         .append("td")
         .html((d, i) => {
-            if (i == 4 && d != 'GitHub 帳號') {
+            if (i == 4 && d != 'GitHub帳號') {
                 const photo = '../HAHAHA.png';
                 return '<img src="' + photo + '">' + '<hr><a href="https://github.com/' + d + '/vis2023f/" target="_blank">' + d + '</a>';
             } else if (i == 0 || i == 2 || isNaN(d)) {
