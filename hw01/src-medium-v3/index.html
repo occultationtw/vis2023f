@@ -211,7 +211,7 @@
                 .data(function (d) { return d; }).enter()
                 .append("td")
                 .html(function (d, i) {
-                    if (i == 4 && d != 'GitHub 帳號') {
+                    if (i == 4 && d != 'GitHub帳號') {
                         let photo = '../HAHAHA.png';
                         return `<img src="${photo}" class="img-size"><hr><a href="https://github.com/${d}/vis2023f/" target="_blank">${d}</a>`;
                     }
