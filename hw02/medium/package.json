@@ -1,0 +1,14 @@
+{
+  "name": "1d0a5b029498a951",
+  "main": "1d0a5b029498a951@19.js",
+  "version": "19.0.0",
+  "homepage": "https://observablehq.com/d/1d0a5b029498a951",
+  "author": {
+    "name": "KunJi Li's Workspace",
+    "url": "https://observablehq.com/@kunji-li-ws"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}
