@@ -134,17 +134,17 @@
     })
     .append("img")
     .attr("src", (d, i) => {
-        if (d == 10) return "../svg/52.svg";
-        else if (d == 9) return "../svg/51.svg";
-        else if (d == 8) return "../svg/42.svg";
-        else if (d == 7) return "../svg/41.svg";
-        else if (d == 6) return "../svg/32.svg";
-        else if (d == 5) return "../svg/31.svg";
-        else if (d == 4) return "../svg/22.svg";
-        else if (d == 3) return "../svg/21.svg";
-        else if (d == 2) return "../svg/12.svg";
-        else if (d == 1) return "../svg/11.svg";
-        else if (d == 0) return "../svg/01.svg";
+        if (d == 10) return "./index_files/52.svg";
+        else if (d == 9) return "./index_files/51.svg";
+        else if (d == 8) return "./index_files/42.svg";
+        else if (d == 7) return "./index_files/41.svg";
+        else if (d == 6) return "./index_files/32.svg";
+        else if (d == 5) return "./index_files/31.svg";
+        else if (d == 4) return "./index_files/22.svg";
+        else if (d == 3) return "./index_files/21.svg";
+        else if (d == 2) return "./index_files/12.svg";
+        else if (d == 1) return "./index_files/11.svg";
+        else if (d == 0) return "./index_files/01.svg";
         else return "../svg/00.svg";
     })
     .attr("x", "0")
@@ -168,8 +168,7 @@
         .append("td")
         .html((d, i) => {
             if (i == 4 && d != 'GitHub 帳號') {
-                const timestamp = Date.now();
-                const imageSource = 'https://picsum.photos/200/300/?random&' + timestamp;
+                const imageSource = '../HAHAHA.png';
                 return '<img src="' + imageSource + '">' + '<hr><a href="https://github.com/' + d + '/vis2023f/" target="_blank">' + d + '</a>';
             } else if (i == 0 || i == 2 || isNaN(d)) {
                 return d;
@@ -184,18 +183,18 @@
         })
         .append("img")
         .attr("src", (d) => {
-            if (d == 10) return "../svg/52.svg";
-            else if (d == 9) return "../svg/51.svg";
-            else if (d == 8) return "../svg/42.svg";
-            else if (d == 7) return "../svg/41.svg";
-            else if (d == 6) return "../svg/32.svg";
-            else if (d == 5) return "../svg/31.svg";
-            else if (d == 4) return "../svg/22.svg";
-            else if (d == 3) return "../svg/21.svg";
-            else if (d == 2) return "../svg/12.svg";
-            else if (d == 1) return "../svg/11.svg";
-            else if (d == 0) return "../svg/01.svg";
-            else return "../svg/00.svg";
+            if (d == 10) return "./index_files/52.svg";
+            else if (d == 9) return "./index_files/51.svg";
+            else if (d == 8) return "./index_files/42.svg";
+            else if (d == 7) return "./index_files/41.svg";
+            else if (d == 6) return "./index_files/32.svg";
+            else if (d == 5) return "./index_files/31.svg";
+            else if (d == 4) return "./index_files/22.svg";
+            else if (d == 3) return "./index_files/21.svg";
+            else if (d == 2) return "./index_files/12.svg";
+            else if (d == 1) return "./index_files/11.svg";
+            else if (d == 0) return "./index_files/01.svg";
+            else return "./index_files/00.svg";
         })
         .attr("width", 50)
         .attr("height", 50);
