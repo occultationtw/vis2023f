@@ -1,0 +1,14 @@
+{
+  "name": "817ca0acecd5740c",
+  "main": "817ca0acecd5740c@46.js",
+  "version": "46.0.0",
+  "homepage": "https://observablehq.com/d/817ca0acecd5740c",
+  "author": {
+    "name": "KunJi Li's Workspace",
+    "url": "https://observablehq.com/@kunji-li-ws"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}
