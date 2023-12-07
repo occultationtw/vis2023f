@@ -1,0 +1,14 @@
+{
+  "name": "27e0eec4c8efd5d2",
+  "main": "27e0eec4c8efd5d2@34.js",
+  "version": "34.0.0",
+  "homepage": "https://observablehq.com/d/27e0eec4c8efd5d2",
+  "author": {
+    "name": "OccultationTW's Workspace",
+    "url": "https://observablehq.com/@occultationtw-ws"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4 - 5"
+  }
+}
